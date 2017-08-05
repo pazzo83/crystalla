@@ -1,5 +1,5 @@
 module Crystalla::BlasHelper
-  def blas_multiply(other: Matrix)
+  def blas_multiply(other : Matrix)
     c = self.class.zeros(number_of_rows, other.number_of_cols)
     LibBlas.dgemm(
       LibBlas::Order::ColMajor,                                 # order
@@ -11,7 +11,7 @@ module Crystalla::BlasHelper
     )
     c
   end
-  def blas_multiply(other: NdArray)
+  def blas_multiply(other : NdArray)
     number_of_rows = shape[0]
     number_of_cols = shape[1]
     other_number_of_cols = other.shape[1]
