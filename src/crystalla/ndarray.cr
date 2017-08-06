@@ -364,7 +364,7 @@ module Crystalla
       @shape[0] == 1
     end
 
-    def insert!(index : Int32, element: Float64)
+    def insert!(index : Int32, element : Float64)
       @values.insert(index, element)
       @shape[1] += 1
     end
