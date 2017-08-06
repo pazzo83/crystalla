@@ -371,19 +371,19 @@ module Crystalla
       Ndarray.new(new_values)
     end
 
-    def prepend(element : Number) : Ndarray
+    def prepend(element : Number) : NdArray
       insert(0, element)
     end
 
-    def append(element : Number) : Ndarray
+    def append(element : Number) : NdArray
       insert(@shape[1], element)
     end
 
-    def prepend(row : NdArray) : Ndarray
+    def prepend(row : NdArray) : NdArray
       add_rows(0, row)
     end
 
-    def append(row : NdArray) : Ndarray
+    def append(row : NdArray) : NdArray
       add_rows(@shape[0], row)
     end
 
