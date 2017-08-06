@@ -364,11 +364,15 @@ module Crystalla
       @shape[0] == 1
     end
 
-    def insert(index : Int32, element : Int32)
+    def insert(index : Int32, element : Float64)
       new_values = [] of Float64
       new_values += @values
-      new_values.insert(index, element.to_f64)
-      Ndarray.new(new_values)
+      new_values.insert(index, element)
+      NdArray.new(new_values)
+    end
+
+    def insert(index : Int32, element : Int32)
+      insert(index, element.to_f64)
     end
 
     def prepend(element : Number) : NdArray
