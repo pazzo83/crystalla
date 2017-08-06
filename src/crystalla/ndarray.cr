@@ -364,6 +364,11 @@ module Crystalla
       @shape[0] == 1
     end
 
+    def insert!(index : Int32, element: Float64)
+      @values.insert(index, element)
+      @shape[1] += 1
+    end
+
     def insert(index : Int32, element : Float64)
       new_values = [] of Float64
       new_values += @values
@@ -381,6 +386,10 @@ module Crystalla
 
     def append(element : Number) : NdArray
       insert(@shape[1], element)
+    end
+
+    def append!(element : Number)
+      insert!(@shape[1], element)
     end
 
     def prepend(row : NdArray) : NdArray
