@@ -203,11 +203,15 @@ module Crystalla
     end
 
     def [](index)
-      row = [] of Float64
-      (0...@shape[1]).each do |j|
-        row.push self[index, j]
+      if shape[0] == 0
+        return values[index]
+      else
+        row = [] of Float64
+        (0...@shape[1]).each do |j|
+            row.push self[index, j]
+        end
+        return row
       end
-      return row
     end
 
     def [](row, col) : Float64
