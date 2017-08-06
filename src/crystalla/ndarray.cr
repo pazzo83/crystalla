@@ -180,7 +180,7 @@ module Crystalla
         raise ArgumentError.new "number of rows/columns mismatch in array multiplication"
       end
 
-      blas_multiply_array other
+      blas_multiply other
     end
 
     # reshape array C style or Fortran style
